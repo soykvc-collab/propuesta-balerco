@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Propuesta Balerco — Sitio web 2026</title>
+<title>Propuesta Balerco — versión completa</title>
 <!-- privado: el link solo lo conoce quien lo recibe, no queremos que Google lo indexe -->
 <meta name="robots" content="noindex,nofollow" />
 <meta name="description" content="Propuesta de sitio web para Balerco." />
@@ -264,13 +264,128 @@ p{font-size:clamp(.86rem,1.22vw,1.06rem);line-height:1.6;color:var(--tinta-suave
         Tu navegador no puede reproducir el video.
       </video>
       <figcaption>
-        Así se ve y así se recorre, pantalla por pantalla. Lo que sigue es
-        cómo está armado, en cuánto tiempo y cuánto cuesta.
+        Así se ve y así se recorre, pantalla por pantalla. En las siguientes láminas
+        les cuento por qué está armado así, y qué falta para programarlo.
       </figcaption>
     </figure>
   </section>
 
-  <!-- 3 · LA PROPUESTA -->
+  <!-- 3 · EL GANCHO -->
+  <section class="s s--gancho">
+    <div class="deco" aria-hidden="true">
+      <img src="medios/iconos/lupa.png" alt="" style="--t:clamp(90px,13vw,196px);--d:7.6s;--r0:-.7s;right:13.6%;top:38%;rotate:-12deg">
+      <img src="medios/iconos/pin.png" alt="" style="--t:clamp(44px,5.4vw,82px);--d:6.6s;--r0:-2.6s;right:28%;top:16%;rotate:9deg">
+      <img src="medios/iconos/cometa.png" alt="" style="--t:clamp(46px,5.6vw,86px);--d:8.2s;--r0:-1.5s;right:7%;top:73%;rotate:11deg">
+    </div>
+    <span class="kicker up">Por dónde empezamos</span>
+    <h2 class="up" style="max-width:20ch">Así busca hoy<br />un cliente suyo.</h2>
+    <div class="up" style="margin-top:clamp(20px,3vw,38px)">
+      <div class="busqueda" id="busqueda">
+        <div class="buscador">
+          <svg class="lupa" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+          <span><span id="tecleo" data-txt="parques infantiles bogotá">parques infantiles bogotá</span><i class="cursor" aria-hidden="true"></i></span>
+        </div>
+        <ul class="sugerencias">
+          <li style="--n:.04s"><svg class="lupa lupa--mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg><span>parques infantiles bogotá</span></li>
+          <li style="--n:.10s"><svg class="lupa lupa--mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg><span>parques infantiles bogotá <b>precios</b></span></li>
+          <li style="--n:.16s"><svg class="lupa lupa--mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg><span>parques infantiles bogotá <b>fabricantes</b></span></li>
+          <li style="--n:.22s"><svg class="lupa lupa--mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg><span>parques infantiles bogotá <b>para conjuntos</b></span></li>
+        </ul>
+      </div>
+      <div class="vacio">
+        <p style="font-size:clamp(.95rem,1.5vw,1.3rem);color:var(--tinta)">
+          Ahí es exactamente donde vamos a trabajar: que cuando alguien escriba esto,<br />
+          <strong>Balerco sea una de las opciones que aparecen</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · EL PANORAMA -->
+  <section class="s">
+    <span class="kicker up">El panorama</span>
+    <h2 class="up">Con quién competimos<br />en esa búsqueda.</h2>
+    <p class="lead up" style="margin-top:14px">
+      Miramos quién aparece hoy de primero para entender dónde se gana rápido
+      y dónde hay que jugar a plazo.
+    </p>
+    <div class="g3 up" style="margin-top:clamp(16px,2.4vw,30px)">
+      <div class="card">
+        <span class="cifra">130</span>
+        <h3>páginas publicadas</h3>
+        <p>Tienen una página dedicada a cada producto: madera, metal, columpios, castillos, biosaludables. Google posiciona páginas, no sitios.</p>
+      </div>
+      <div class="card">
+        <span class="cifra">2015</span>
+        <h3>llevan en línea</h3>
+        <p>Once años con el mismo dominio, y el nombre del dominio es justo lo que la gente escribe. La antigüedad es lo único que no se acelera.</p>
+      </div>
+      <div class="card card--tinta">
+        <img class="ic" src="medios/iconos/pin.png" alt=""
+             style="width:auto;height:clamp(1.7rem,3.4vw,2.9rem);margin-bottom:6px" />
+        <h3>El mapa está abierto</h3>
+        <p>No publican dirección física. Ese bloque aparece por encima de todos los resultados, y ahí es donde entramos primero.</p>
+      </div>
+    </div>
+    <p class="mini up" style="margin-top:16px">
+      Por eso el plan no promete posiciones: arranca por donde se gana en semanas
+      —el mapa y las búsquedas propias— y deja el terreno listo para competir por las grandes.
+    </p>
+  </section>
+
+  <!-- 5 · LO QUE CAMBIÓ -->
+  <section class="s">
+    <span class="kicker up">Lo que cambió</span>
+    <div class="cols">
+      <div class="up">
+        <h2>El sitio actual hace<br />bien su trabajo.<br /><span class="na">Hoy hay otro por hacer.</span></h2>
+        <p class="lead" style="margin-top:18px">
+          Se construyó para presentar las marcas aliadas —Proludic, Ropecamp, Breeze—
+          y eso lo cumple. Lo que cambió en estos años no es el sitio: es por dónde
+          llega el cliente.
+        </p>
+      </div>
+      <div class="up">
+        <div class="card" style="margin-bottom:14px">
+          <h3>Antes, el sitio era una carta de presentación</h3>
+          <p>El cliente ya los conocía y entraba a confirmar respaldo y trayectoria.</p>
+        </div>
+        <div class="card card--na">
+          <h3>Hoy, el sitio es la puerta de entrada</h3>
+          <p>El cliente empieza en Google escribiendo lo que necesita, sin saber todavía a quién llamar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · LA BRECHA, SIN CULPA -->
+  <section class="s">
+    <span class="kicker up">Lo que vamos a dejar listo</span>
+    <h2 class="up">Tres piezas que<br />hacen el trabajo.</h2>
+    <p class="lead up" style="margin-top:14px">
+      Son las tres que deciden si una persona los encuentra cuando está buscando.
+      Van incluidas desde la primera fase.
+    </p>
+    <div class="g3 up" style="margin-top:clamp(18px,2.6vw,34px)">
+      <div class="card">
+        <img class="ic" src="medios/iconos/lupa.png" alt="" />
+        <h3>Que Google sepa qué venden</h3>
+        <p>Títulos y textos armados con las palabras que la gente escribe: parques, juegos, biosaludables, Bogotá.</p>
+      </div>
+      <div class="card">
+        <img class="ic" src="medios/iconos/pin.png" alt="" />
+        <h3>Ficha de negocio en el mapa</h3>
+        <p>Dirección, horario y teléfono configurados para aparecer en el panel de Google con el resto de opciones.</p>
+      </div>
+      <div class="card">
+        <img class="ic" src="medios/iconos/grafico.png" alt="" />
+        <h3>Medición desde el día uno</h3>
+        <p>Analítica instalada para saber cuánta gente entra, qué busca y por dónde llegó.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · LA PROPUESTA -->
   <section class="s">
     <span class="kicker up">La propuesta</span>
     <div class="cols">
@@ -292,11 +407,30 @@ p{font-size:clamp(.86rem,1.22vw,1.06rem);line-height:1.6;color:var(--tinta-suave
     </div>
   </section>
 
-  <!-- 4 · ALCANCE -->
+  <!-- 8 · QUÉ CAMBIA -->
+  <section class="s">
+    <span class="kicker up">El trabajo, en concreto</span>
+    <h2 class="up">Lo mismo que ya hacen,<br />contado para que los encuentren.</h2>
+    <div class="up" style="margin-top:clamp(14px,2vw,26px)">
+      <table class="tabla">
+        <thead><tr><th></th><th>Qué hacemos</th><th>Cómo queda</th></tr></thead>
+        <tbody>
+          <tr><td>Lo que Google lee</td><td class="hoy">Reescribimos títulos y textos</td><td class="nuevo">Parques infantiles, juegos y mobiliario urbano en Bogotá</td></tr>
+          <tr><td>Al compartir por WhatsApp</td><td class="hoy">Armamos la vista previa del enlace</td><td class="nuevo">Portada con marca y mensaje</td></tr>
+          <tr><td>Ficha de negocio local</td><td class="hoy">Configuramos el perfil de Google</td><td class="nuevo">Dirección, horario y contacto en el mapa</td></tr>
+          <tr><td>Contacto desde el celular</td><td class="hoy">Sumamos canales directos</td><td class="nuevo">WhatsApp, llamada y formulario</td></tr>
+          <tr><td>Medición de visitas</td><td class="hoy">Instalamos analítica</td><td class="nuevo">Informe mensual de visitas y solicitudes</td></tr>
+          <tr><td>Fotos</td><td class="hoy">Damos protagonismo a las obras propias</td><td class="nuevo">Galería con proyectos hechos por Balerco</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 9 · ALCANCE -->
   <section class="s">
     <span class="kicker up">Alcance</span>
     <h2 class="up">Qué entregamos.</h2>
-    <div class="g3 up" style="margin-top:clamp(16px,2.4vw,30px);grid-template-columns:1fr 1fr;max-width:62rem">
+    <div class="g3 up" style="margin-top:clamp(16px,2.4vw,30px)">
       <div class="card card--tinta">
         <img class="ic" src="medios/iconos/cohete.png" alt="" />
         <h3>El sitio</h3>
@@ -307,13 +441,16 @@ p{font-size:clamp(.86rem,1.22vw,1.06rem);line-height:1.6;color:var(--tinta-suave
         <h3>La migración</h3>
         <p>Redirección de las direcciones que hoy existen —<i>/nosotros/</i>, <i>/galeria/</i>, <i>/portafolio/</i>, <i>/contactanos/</i>, <i>/proludic/</i>, <i>/ropecamp/</i> y las demás— hacia sus secciones nuevas, para conservar los ocho años de historia del dominio. Política de datos personales incluida.</p>
       </div>
+      <div class="card">
+        <img class="ic" src="medios/iconos/grafico.png" alt="" />
+        <h3>La medición</h3>
+        <p>Analítica, Google Search Console y perfil de Google Business configurados, para saber quién entra y desde dónde.</p>
+      </div>
     </div>
-    <p class="mini up" style="margin-top:16px">
-      Las páginas de las marcas aliadas —Proludic, Ropecamp y Breeze— se abordan en una etapa siguiente.
-    </p>
+    <p class="mini up" style="margin-top:16px">Las páginas de Proludic, Ropecamp y Breeze se conservan en la segunda fase.</p>
   </section>
 
-  <!-- 5 · PLAZOS -->
+  <!-- 10 · PLAZOS -->
   <section class="s s--plazos">
     <div class="deco" aria-hidden="true">
       <img src="medios/iconos/rueda.png" alt="" style="--t:clamp(60px,8vw,124px);--d:7.8s;--r0:-1.1s;right:7%;top:17%;rotate:8deg">
@@ -333,13 +470,14 @@ p{font-size:clamp(.86rem,1.22vw,1.06rem);line-height:1.6;color:var(--tinta-suave
     </p>
   </section>
 
-  <!-- 6 · INVERSIÓN -->
+  <!-- 11 · INVERSIÓN -->
   <section class="s">
     <span class="kicker up">Inversión</span>
-    <h2 class="up">Una sola fase.<br />Todo incluido.</h2>
-    <div class="precio up" style="margin-top:clamp(16px,2.4vw,30px);grid-template-columns:minmax(0,34rem);justify-content:center">
+    <h2 class="up">Por fases, para<br />publicar antes.</h2>
+    <div class="precio up" style="margin-top:clamp(16px,2.4vw,30px)">
       <div class="plan plan--destacado">
-        <h3>El sitio en el aire</h3>
+        <span class="etiqueta">Empezamos aquí</span>
+        <h3>Fase 1 · El sitio en el aire</h3>
         <div class="valor">$2.600.000</div>
         <p class="plan__para">El sitio existe, se entiende y entra al mapa.</p>
         <ul>
@@ -351,15 +489,71 @@ p{font-size:clamp(.86rem,1.22vw,1.06rem);line-height:1.6;color:var(--tinta-suave
           <li>Dos rondas de ajustes</li>
         </ul>
       </div>
+      <div class="plan">
+        <h3>Fase 2 · Las marcas aliadas</h3>
+        <div class="valor">$1.400.000</div>
+        <p class="plan__para">Más superficie para aparecer: tres páginas más que Google puede leer y posicionar por separado.</p>
+        <ul>
+          <li>Una página por marca: Proludic, Ropecamp y Breeze</li>
+          <li>Cada una con su propia dirección, para que Google las lea aparte</li>
+          <li>Catálogo y fichas de cada aliado, con enlace a cotización</li>
+          <li>Sus direcciones actuales apuntando a las páginas nuevas</li>
+          <li>Medición por marca, para saber cuál trae más solicitudes</li>
+        </ul>
+      </div>
     </div>
     <p class="mini up" style="margin-top:18px">
       50 % al aprobar · 50 % antes de publicar. Dominio y correos ya son suyos.
-      El alojamiento del sitio nuevo no tiene costo mensual. Incluye tres meses
-      de garantía: si algo falla, se corrige sin costo.
+      El alojamiento del sitio nuevo no tiene costo mensual. Las dos fases incluyen
+      tres meses de garantía: si algo falla, se corrige sin costo.
     </p>
   </section>
 
-  <!-- 7 · CIERRE -->
+  <!-- 12 · ANEXO · PAUTA -->
+  <section class="s">
+    <span class="kicker up">Anexo · informativo</span>
+    <h2 class="up">Aparecer arriba:<br />dos caminos que se suman.</h2>
+    <p class="lead up" style="margin-top:12px;max-width:58rem">
+      La pauta no mejora la posición natural: compra un espacio aparte, encima de
+      los resultados. Por eso no se reemplazan, se acompañan.
+    </p>
+    <div class="precio up" style="margin-top:clamp(12px,1.8vw,24px)">
+      <div class="plan">
+        <span class="plan__tipo">Ya incluido en la propuesta</span>
+        <h3>Posición natural</h3>
+        <dl class="ficha">
+          <dt>Qué hacemos</dt>
+          <dd>Títulos y textos con las palabras que la gente escribe, ficha de negocio en el mapa y medición instalada.</dd>
+          <dt>Qué mejora</dt>
+          <dd>Empiezan a aparecer en el mapa y en las búsquedas específicas: por producto, por zona y por nombre propio.</dd>
+          <dt>Cuándo se ve</dt>
+          <dd>El mapa, en semanas. Lo natural, entre tres y seis meses — y se acumula.</dd>
+          <dt>Qué cuesta</dt>
+          <dd><b>Sin costo adicional.</b> Va dentro de la fase 1.</dd>
+        </dl>
+      </div>
+      <div class="plan plan--destacado">
+        <span class="plan__tipo">Opcional · piloto de 3 meses</span>
+        <h3>Pauta en Google</h3>
+        <dl class="ficha">
+          <dt>Qué hacemos</dt>
+          <dd>Campaña de búsqueda, medición de solicitudes, depuración de búsquedas que no sirven e informe mensual.</dd>
+          <dt>Qué mejora</dt>
+          <dd>Aparecen de primeros desde el primer día, en el espacio marcado «Patrocinado», por encima de todos los resultados.</dd>
+          <dt>Cuándo se ve</dt>
+          <dd>Inmediato. Es alquiler: al dejar de pagar, el anuncio desaparece.</dd>
+          <dt>Qué cuesta</dt>
+          <dd><b>Montaje $350.000</b> · gestión <b>$450.000</b>/mes · pauta desde <b>$1.000.000</b>/mes, que se paga directo a Google.</dd>
+        </dl>
+      </div>
+    </div>
+    <p class="mini up" style="margin-top:13px">
+      La cuenta de anuncios queda a nombre de Balerco: el historial y la inversión son suyos.
+      Esta hoja es informativa y no hace parte de la aprobación de hoy.
+    </p>
+  </section>
+
+  <!-- 13 · CIERRE -->
   <section class="s s--portada s--cierre" style="background:var(--tinta)">
     <div class="deco" aria-hidden="true">
       <img src="medios/iconos/fiesta.png" alt="" style="--t:clamp(70px,9.4vw,146px);--d:7.2s;--r0:-.6s;right:8%;top:15%;rotate:12deg">
@@ -371,7 +565,7 @@ p{font-size:clamp(.86rem,1.22vw,1.06rem);line-height:1.6;color:var(--tinta-suave
     <div class="up">
       <h1>Hagamos que Balerco<br />se vea del tamaño<br />de lo que construye.</h1>
       <p class="lead up" style="color:#fff;opacity:.9;margin-top:22px">
-        Lo único que falta para arrancar: aprobar la propuesta y pasarnos los números
+        Lo único que falta para arrancar: aprobar la fase 1 y pasarnos los números
         que quieren mostrar, las redes y el correo donde recibirán las solicitudes.
       </p>
     </div>
@@ -384,7 +578,7 @@ p{font-size:clamp(.86rem,1.22vw,1.06rem);line-height:1.6;color:var(--tinta-suave
 
 <div class="nav">
   <button id="ant" aria-label="Diapositiva anterior">‹</button>
-  <span class="cuenta" id="cuenta">1 / 7</span>
+  <span class="cuenta" id="cuenta">1 / 13</span>
   <button id="sig" aria-label="Diapositiva siguiente">›</button>
 </div>
 
