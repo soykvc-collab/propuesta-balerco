@@ -89,6 +89,27 @@ p{font-size:clamp(.86rem,1.22vw,1.06rem);line-height:1.6;color:var(--tinta-suave
 .lupa{width:clamp(18px,2vw,26px);height:clamp(18px,2vw,26px);flex:0 0 auto;stroke:var(--tinta-suave);fill:none;stroke-width:2.4}
 .vacio{margin-top:clamp(16px,2.4vw,30px);border-left:4px solid var(--naranja);padding-left:clamp(14px,1.8vw,22px)}
 
+/* el campo y sus sugerencias comparten sombra: al abrirse parecen una sola pieza */
+.busqueda{max-width:640px;border-radius:26px;transition:box-shadow .22s ease}
+.busqueda.abierta{box-shadow:0 14px 34px rgba(22,34,59,.13)}
+.busqueda.abierta .buscador{box-shadow:none;border-radius:26px 26px 0 0;border-bottom:2px solid #eef0f5}
+.cursor{display:inline-block;width:2px;height:1.05em;background:var(--tinta);vertical-align:-.16em;margin-left:3px;
+  animation:parpadeo 1.05s steps(1) infinite}
+.busqueda.quieto .cursor{display:none}
+@keyframes parpadeo{0%,50%{opacity:1}50.01%,100%{opacity:0}}
+.sugerencias{list-style:none;background:#fff;border:2px solid #dfe3ea;border-top:none;
+  border-radius:0 0 26px 26px;padding:6px 0 12px;display:none}
+.busqueda.abierta .sugerencias{display:block}
+.sugerencias li{display:flex;align-items:center;gap:14px;
+  padding:clamp(6px,.85vw,11px) clamp(18px,2.4vw,30px);
+  font-size:clamp(.88rem,1.5vw,1.3rem);color:var(--tinta);
+  opacity:0;transform:translateY(-5px);animation:aparece .24s ease var(--n,0s) forwards}
+.sugerencias li:first-child{background:#f4f6fa}
+.sugerencias b{font-weight:700}
+.lupa--mini{width:clamp(14px,1.5vw,19px);height:clamp(14px,1.5vw,19px);stroke:#9aa3b2;stroke-width:2.6}
+@keyframes aparece{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}.sugerencias li{animation-duration:.01s}}
+
 /* ---- tabla comparativa ---- */
 .tabla{width:100%;border-collapse:collapse;font-size:clamp(.74rem,1.02vw,.95rem)}
 .tabla th,.tabla td{padding:clamp(8px,1.1vw,14px) clamp(8px,1.2vw,16px);text-align:left;border-bottom:1px solid #e5e8ee}
@@ -233,9 +254,17 @@ p{font-size:clamp(.86rem,1.22vw,1.06rem);line-height:1.6;color:var(--tinta-suave
     <span class="kicker up">El punto de partida</span>
     <h2 class="up" style="max-width:20ch">Así busca hoy<br />un cliente suyo.</h2>
     <div class="up" style="margin-top:clamp(20px,3vw,38px)">
-      <div class="buscador">
-        <svg class="lupa" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
-        <span>parques infantiles bogotá</span>
+      <div class="busqueda" id="busqueda">
+        <div class="buscador">
+          <svg class="lupa" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+          <span><span id="tecleo" data-txt="parques infantiles bogotá">parques infantiles bogotá</span><i class="cursor" aria-hidden="true"></i></span>
+        </div>
+        <ul class="sugerencias">
+          <li style="--n:.04s"><svg class="lupa lupa--mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg><span>parques infantiles bogotá</span></li>
+          <li style="--n:.10s"><svg class="lupa lupa--mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg><span>parques infantiles bogotá <b>precios</b></span></li>
+          <li style="--n:.16s"><svg class="lupa lupa--mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg><span>parques infantiles bogotá <b>fabricantes</b></span></li>
+          <li style="--n:.22s"><svg class="lupa lupa--mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg><span>parques infantiles bogotá <b>para conjuntos</b></span></li>
+        </ul>
       </div>
       <div class="vacio">
         <p style="font-size:clamp(.95rem,1.5vw,1.3rem);color:var(--tinta)">
@@ -446,6 +475,58 @@ p{font-size:clamp(.86rem,1.22vw,1.06rem);line-height:1.6;color:var(--tinta-suave
 </div>
 
 <script>
+/* ---- el buscador se escribe solo ---- */
+(function(){
+  var caja = document.getElementById('busqueda');
+  if (!caja) return;
+  var campo = document.getElementById('tecleo');
+  var texto = campo.getAttribute('data-txt');
+  var lento = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var movil = matchMedia('(max-width:820px)').matches;
+  var reloj = null, listo = false;
+
+  function terminar(){
+    clearTimeout(reloj); reloj = null; listo = true;
+    campo.textContent = texto;
+    caja.classList.add('abierta', 'quieto');
+  }
+  function reiniciar(){
+    clearTimeout(reloj); reloj = null; listo = false;
+    campo.textContent = '';
+    caja.classList.remove('abierta', 'quieto');
+  }
+  function arrancar(){
+    if (listo || reloj) return;
+    if (lento) return terminar();
+    reiniciar();
+    var n = 0;
+    (function paso(){
+      campo.textContent = texto.slice(0, ++n);
+      if (n < texto.length) {
+        /* el ritmo irregular es lo que lo hace parecer una mano y no una máquina */
+        reloj = setTimeout(paso, 42 + Math.random() * 68);
+      } else {
+        reloj = setTimeout(function(){
+          caja.classList.add('abierta');
+          reloj = null; listo = true;
+        }, 330);
+      }
+    })();
+  }
+
+  window.busqueda = { arrancar: arrancar, reiniciar: reiniciar, movil: movil };
+  /* si imprimen sin haber pasado por la lámina, que salga el estado final */
+  window.addEventListener('beforeprint', terminar);
+
+  if (movil) {
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){ if (e.isIntersecting) arrancar(); });
+      }, { threshold: .4 }).observe(caja);
+    } else terminar();
+  } else reiniciar();
+})();
+
 (function(){
   var ss = Array.prototype.slice.call(document.querySelectorAll('.s'));
   var i = 0;
@@ -459,6 +540,10 @@ p{font-size:clamp(.86rem,1.22vw,1.06rem);line-height:1.6;color:var(--tinta-suave
     cuenta.textContent = (i + 1) + ' / ' + ss.length;
     barra.style.width = ((i + 1) / ss.length * 100) + '%';
     if (video && !video.paused && !ss[i].contains(video)) video.pause();
+    if (window.busqueda && !window.busqueda.movil) {
+      var b = document.getElementById('busqueda');
+      if (ss[i].contains(b)) window.busqueda.arrancar(); else window.busqueda.reiniciar();
+    }
   }
   document.getElementById('sig').addEventListener('click', function(){ ir(i + 1); });
   document.getElementById('ant').addEventListener('click', function(){ ir(i - 1); });
