@@ -131,6 +131,17 @@ p{font-size:clamp(.86rem,1.22vw,1.06rem);line-height:1.6;color:var(--tinta-suave
 .plan li::before{content:"";position:absolute;left:0;top:.52em;width:8px;height:8px;border-radius:50%;background:var(--naranja)}
 .plan--destacado h3,.plan--destacado p,.plan--destacado li{color:#fff}
 .plan--destacado li::before{background:var(--sol)}
+.plan__tipo{display:block;font-size:clamp(.6rem,.84vw,.74rem);font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--naranja)}
+.ficha{display:grid;gap:0;margin-top:2px}
+.ficha dt{font-size:clamp(.6rem,.82vw,.72rem);font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--tinta);margin-top:11px}
+.ficha dd{font-size:clamp(.73rem,.99vw,.89rem);line-height:1.5;color:var(--tinta-suave);margin-top:2px}
+.ficha dd b{color:var(--tinta);font-weight:700}
+.plan--destacado .plan__tipo{color:var(--sol)}
+.plan--destacado .ficha dt{color:#fff}
+.plan--destacado .ficha dd{color:rgba(255,255,255,.82)}
+.plan--destacado .ficha dd b{color:#fff}
 .etiqueta{position:absolute;top:-11px;right:18px;background:var(--sol);color:var(--tinta);font-size:.68rem;font-weight:700;
   padding:5px 12px;border-radius:999px;letter-spacing:.04em}
 
@@ -480,7 +491,51 @@ p{font-size:clamp(.86rem,1.22vw,1.06rem);line-height:1.6;color:var(--tinta-suave
     </p>
   </section>
 
-  <!-- 12 · CIERRE -->
+  <!-- 12 · ANEXO · PAUTA -->
+  <section class="s">
+    <span class="kicker up">Anexo · informativo</span>
+    <h2 class="up">Aparecer arriba:<br />dos caminos que se suman.</h2>
+    <p class="lead up" style="margin-top:12px;max-width:58rem">
+      La pauta no mejora la posición natural: compra un espacio aparte, encima de
+      los resultados. Por eso no se reemplazan, se acompañan.
+    </p>
+    <div class="precio up" style="margin-top:clamp(12px,1.8vw,24px)">
+      <div class="plan">
+        <span class="plan__tipo">Ya incluido en la propuesta</span>
+        <h3>Posición natural</h3>
+        <dl class="ficha">
+          <dt>Qué hacemos</dt>
+          <dd>Títulos y textos con las palabras que la gente escribe, ficha de negocio en el mapa y medición instalada.</dd>
+          <dt>Qué mejora</dt>
+          <dd>Empiezan a aparecer en el mapa y en las búsquedas específicas: por producto, por zona y por nombre propio.</dd>
+          <dt>Cuándo se ve</dt>
+          <dd>El mapa, en semanas. Lo natural, entre tres y seis meses — y se acumula.</dd>
+          <dt>Qué cuesta</dt>
+          <dd><b>Sin costo adicional.</b> Va dentro de la fase 1.</dd>
+        </dl>
+      </div>
+      <div class="plan plan--destacado">
+        <span class="plan__tipo">Opcional · piloto de 3 meses</span>
+        <h3>Pauta en Google</h3>
+        <dl class="ficha">
+          <dt>Qué hacemos</dt>
+          <dd>Campaña de búsqueda, medición de solicitudes, depuración de búsquedas que no sirven e informe mensual.</dd>
+          <dt>Qué mejora</dt>
+          <dd>Aparecen de primeros desde el primer día, en el espacio marcado «Patrocinado», por encima de todos los resultados.</dd>
+          <dt>Cuándo se ve</dt>
+          <dd>Inmediato. Es alquiler: al dejar de pagar, el anuncio desaparece.</dd>
+          <dt>Qué cuesta</dt>
+          <dd><b>Montaje $350.000</b> · gestión <b>$450.000</b>/mes · pauta desde <b>$1.000.000</b>/mes, que se paga directo a Google.</dd>
+        </dl>
+      </div>
+    </div>
+    <p class="mini up" style="margin-top:13px">
+      La cuenta de anuncios queda a nombre de Balerco: el historial y la inversión son suyos.
+      Esta hoja es informativa y no hace parte de la aprobación de hoy.
+    </p>
+  </section>
+
+  <!-- 13 · CIERRE -->
   <section class="s s--portada s--cierre" style="background:var(--tinta)">
     <div class="deco" aria-hidden="true">
       <img src="medios/iconos/fiesta.png" alt="" style="--t:clamp(70px,9.4vw,146px);--d:7.2s;--r0:-.6s;right:8%;top:15%;rotate:12deg">
@@ -505,7 +560,7 @@ p{font-size:clamp(.86rem,1.22vw,1.06rem);line-height:1.6;color:var(--tinta-suave
 
 <div class="nav">
   <button id="ant" aria-label="Diapositiva anterior">‹</button>
-  <span class="cuenta" id="cuenta">1 / 12</span>
+  <span class="cuenta" id="cuenta">1 / 13</span>
   <button id="sig" aria-label="Diapositiva siguiente">›</button>
 </div>
 
