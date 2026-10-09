@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Balerco · Cronograma del sitio web</title>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="description" content="Cronograma de las cuatro semanas del sitio web de Balerco." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --naranja:#F6851F; --naranja-hondo:#B3490A; --sol:#FFC61E;
+  --cielo:#1FA6E0;  --pasto:#43B54A;  --cereza:#D2336F;
+  --tinta:#16223B;  --tinta-suave:#3a465e;
+  --crema:#FFF6EC;  --blanco:#fff;    --gris:#F3F4F6;
+  --f:"Poppins",system-ui,sans-serif;
+  --r:22px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--f);color:var(--tinta);background:var(--blanco);line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+.envoltura{max-width:62rem;margin:0 auto;padding:clamp(26px,5vw,64px) clamp(20px,5vw,48px) 80px}
+
+/* ---- encabezado ---- */
+.tapa{background:var(--naranja);color:#fff;border-radius:var(--r);
+  padding:clamp(24px,4vw,46px);margin-bottom:clamp(26px,4vw,44px)}
+.marca{font-weight:800;font-size:clamp(1.1rem,2vw,1.4rem);letter-spacing:-.01em;opacity:.9}
+.tapa h1{font-size:clamp(1.8rem,4.6vw,3rem);font-weight:800;line-height:1.08;
+  letter-spacing:-.02em;margin-top:10px}
+.tapa p{margin-top:12px;font-size:clamp(.95rem,1.5vw,1.1rem);opacity:.93;max-width:44rem}
+.sello{display:inline-block;background:rgba(255,255,255,.2);border-radius:999px;
+  padding:6px 15px;font-size:clamp(.68rem,1vw,.78rem);font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+
+h2{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:800;letter-spacing:-.015em;
+  line-height:1.2;margin-bottom:6px}
+.seccion{margin-top:clamp(30px,5vw,52px)}
+.intro{color:var(--tinta-suave);max-width:46rem;margin-bottom:20px}
+
+/* ---- semanas ---- */
+.semana{display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2.4vw,26px);
+  padding:clamp(16px,2.4vw,26px) 0;border-top:1px solid #e5e8ee}
+.semana:first-of-type{border-top:none}
+.bolita{width:clamp(44px,5.4vw,58px);height:clamp(44px,5.4vw,58px);border-radius:50%;
+  background:var(--gris);color:var(--tinta);display:grid;place-items:center;
+  font-weight:800;font-size:clamp(.95rem,1.6vw,1.2rem);flex:0 0 auto}
+.semana--viva .bolita{background:var(--naranja);color:#fff}
+.semana--meta .bolita{background:var(--tinta);color:var(--sol)}
+.fecha{font-size:clamp(.68rem,1vw,.78rem);font-weight:700;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--naranja-hondo)}
+.semana h3{font-size:clamp(1.05rem,1.9vw,1.35rem);font-weight:700;line-height:1.25;margin:3px 0 10px}
+.tareas{list-style:none;display:grid;gap:7px}
+.tareas li{position:relative;padding-left:20px;font-size:clamp(.86rem,1.2vw,.98rem);
+  color:var(--tinta-suave)}
+.tareas li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;
+  border-radius:50%;background:var(--naranja)}
+.marcaje{display:inline-block;margin-top:11px;background:var(--crema);color:var(--naranja-hondo);
+  border-radius:999px;padding:5px 13px;font-size:clamp(.7rem,1vw,.8rem);font-weight:700}
+
+/* ---- lo que necesitamos ---- */
+.pedido{background:var(--tinta);color:#fff;border-radius:var(--r);
+  padding:clamp(20px,3.2vw,36px)}
+.pedido h2{color:#fff}
+.pedido .intro{color:rgba(255,255,255,.82)}
+.lista{list-style:none;display:grid;gap:10px;margin-top:16px;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr))}
+.lista li{background:rgba(255,255,255,.07);border-radius:13px;padding:12px 15px;
+  font-size:clamp(.82rem,1.15vw,.93rem)}
+.lista b{display:block;color:var(--sol);font-weight:700;margin-bottom:2px;
+  font-size:clamp(.86rem,1.2vw,.97rem)}
+
+/* ---- nota ---- */
+.nota{margin-top:clamp(26px,4vw,44px);border-left:4px solid var(--naranja);
+  padding:4px 0 4px clamp(14px,2vw,22px);color:var(--tinta-suave);
+  font-size:clamp(.84rem,1.15vw,.95rem);max-width:48rem}
+.firma{margin-top:clamp(30px,5vw,52px);padding-top:22px;border-top:1px solid #e5e8ee;
+  font-size:clamp(.78rem,1.05vw,.88rem);color:var(--tinta-suave)}
+
+@media (max-width:620px){
+  .semana{grid-template-columns:1fr;gap:10px}
+  .bolita{width:40px;height:40px;font-size:.9rem}
+}
+@media print{
+  .semana{break-inside:avoid}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+
+<div class="envoltura">
+
+  <header class="tapa">
+    <div class="marca">Balerco</div>
+    <span class="sello" style="margin-top:14px">Cronograma</span>
+    <h1>Cuatro semanas,<br />del 5 al 30 de octubre.</h1>
+    <p>
+      Este es el plan de trabajo del sitio web. Lo dejo publicado para que puedan
+      consultarlo cuando quieran: lo voy actualizando a medida que avanzamos.
+    </p>
+  </header>
+
+  <section>
+    <div class="semana semana--viva">
+      <div class="bolita">1</div>
+      <div>
+        <div class="fecha">Lunes 5 — viernes 9 de octubre</div>
+        <h3>Contenido y arranque</h3>
+        <ul class="tareas">
+          <li>Recolección del material: cifras reales, fotos de obras propias y datos de contacto</li>
+          <li>Definición del correo donde van a llegar las solicitudes</li>
+          <li>Montaje del sitio en el servidor de pruebas</li>
+        </ul>
+        <span class="marcaje">Necesitamos el material de Balerco esta semana</span>
+      </div>
+    </div>
+
+    <div class="semana">
+      <div class="bolita">2</div>
+      <div>
+        <div class="fecha">Lunes 12 — viernes 16 de octubre</div>
+        <h3>Contenido montado y política de datos</h3>
+        <ul class="tareas">
+          <li>Textos y fotos definitivas dentro del sitio</li>
+          <li>Página de política de tratamiento de datos personales</li>
+          <li>Formulario conectado, con la casilla de autorización</li>
+          <li>Primera revisión con ustedes</li>
+        </ul>
+        <span class="marcaje">Lunes 12 es festivo: la semana tiene cuatro días hábiles</span>
+      </div>
+    </div>
+
+    <div class="semana">
+      <div class="bolita">3</div>
+      <div>
+        <div class="fecha">Lunes 19 — viernes 23 de octubre</div>
+        <h3>Migración, medición y pruebas</h3>
+        <ul class="tareas">
+          <li>Redirección de las direcciones actuales hacia las secciones nuevas</li>
+          <li>Analítica y Search Console instalados</li>
+          <li>Ficha de negocio en Google configurada</li>
+          <li>Pruebas en celular, tableta y computador</li>
+          <li>Segunda revisión con ustedes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="semana semana--meta">
+      <div class="bolita">4</div>
+      <div>
+        <div class="fecha">Lunes 26 — viernes 30 de octubre</div>
+        <h3>Publicación</h3>
+        <ul class="tareas">
+          <li>Ajustes finales de la segunda revisión</li>
+          <li>Publicación del sitio en balerco.co</li>
+          <li>Verificación de que todo responde: formulario, correos y redirecciones</li>
+          <li>Entrega de accesos a la analítica y a la ficha de Google</li>
+        </ul>
+        <span class="marcaje">El sitio queda publicado el viernes 30 de octubre</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion pedido">
+    <h2>Lo que necesitamos de ustedes</h2>
+    <p class="intro">
+      Es lo único que falta para que las cuatro semanas corran sin pausas.
+      Entre más pronto llegue, más holgado queda el cronograma.
+    </p>
+    <ul class="lista">
+      <li><b>Las cifras reales</b>Proyectos entregados, años de experiencia, ciudades o lo que quieran destacar</li>
+      <li><b>Fotos de obras propias</b>Parques instalados por Balerco, en la mejor calidad que tengan</li>
+      <li><b>Correo de solicitudes</b>Dónde quieren recibir los mensajes del formulario</li>
+      <li><b>WhatsApp y redes</b>El número que va en el sitio y los enlaces de sus redes</li>
+      <li><b>Datos de la empresa</b>Razón social, NIT y dirección, para la política de datos</li>
+      <li><b>Responsable de datos</b>Quién atiende las solicitudes sobre datos personales</li>
+    </ul>
+  </section>
+
+  <p class="nota">
+    El sitio actual se mantiene encendido dos semanas más después de la publicación,
+    como respaldo. Si el material llega más tarde de la semana 1, las fechas se corren
+    en la misma proporción y se los aviso de inmediato.
+  </p>
+
+  <p class="firma">
+    Keiner Valencia · Cronograma del sitio web de Balerco · Octubre de 2026
+  </p>
+
+</div>
+
+</body>
+</html>
