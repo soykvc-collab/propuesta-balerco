@@ -58,6 +58,23 @@ h2{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:800;letter-spacing:-.015em;
   border-radius:50%;background:var(--naranja)}
 .marcaje{display:inline-block;margin-top:11px;background:var(--crema);color:var(--naranja-hondo);
   border-radius:999px;padding:5px 13px;font-size:clamp(.7rem,1vw,.8rem);font-weight:700}
+.estado{display:inline-block;border-radius:999px;padding:3px 11px;margin-left:9px;
+  font-size:clamp(.62rem,.9vw,.71rem);font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;vertical-align:.18em}
+.estado--listo{background:#E3F5E4;color:#2A7C30}
+.estado--curso{background:#FFF0D6;color:var(--naranja-hondo)}
+.estado--espera{background:var(--gris);color:var(--tinta-suave)}
+.tareas li.ok{color:var(--tinta)}
+.tareas li.ok::before{background:var(--pasto)}
+.tareas li.ok b{font-weight:700}
+.tareas li.espera::before{background:#c8cdd6}
+.vistazo{display:block;margin-top:14px;background:var(--crema);border-radius:14px;
+  padding:13px 16px;text-decoration:none;color:var(--naranja-hondo);font-weight:700;
+  font-size:clamp(.82rem,1.15vw,.93rem);border:1px solid #f3dcc2}
+.vistazo span{display:block;font-weight:500;color:var(--tinta-suave);margin-top:2px;
+  font-size:clamp(.74rem,1vw,.84rem)}
+.sellofecha{display:inline-block;background:rgba(255,255,255,.2);border-radius:999px;
+  padding:5px 13px;font-size:clamp(.66rem,.95vw,.74rem);font-weight:600;margin-top:14px}
 
 /* ---- lo que necesitamos ---- */
 .pedido{background:var(--tinta);color:#fff;border-radius:var(--r);
@@ -100,27 +117,31 @@ h2{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:800;letter-spacing:-.015em;
       Este es el plan de trabajo del sitio web. Lo dejo publicado para que puedan
       consultarlo cuando quieran: lo voy actualizando a medida que avanzamos.
     </p>
+    <div class="sellofecha">Actualizado el sábado 10 de octubre · vamos en fecha</div>
   </header>
 
   <section>
-    <div class="semana semana--viva">
-      <div class="bolita">1</div>
+    <div class="semana">
+      <div class="bolita" style="background:var(--pasto);color:#fff">✓</div>
       <div>
-        <div class="fecha">Lunes 5 — viernes 9 de octubre</div>
-        <h3>Contenido y arranque</h3>
+        <div class="fecha">Lunes 5 — viernes 9 de octubre <span class="estado estado--listo">Hecha</span></div>
+        <h3>Arranque</h3>
         <ul class="tareas">
-          <li>Recolección del material: cifras reales, fotos de obras propias y datos de contacto</li>
-          <li>Definición del correo donde van a llegar las solicitudes</li>
-          <li>Montaje del sitio en el servidor de pruebas</li>
+          <li class="ok"><b>Sitio montado en el servidor de pruebas</b> — ya se puede recorrer completo</li>
+          <li class="ok"><b>Primer material recibido</b> de parte de Balerco</li>
+          <li class="espera">Falta el resto del material y el acceso al dominio (lista abajo)</li>
         </ul>
-        <span class="marcaje">Necesitamos el material de Balerco esta semana</span>
+        <a class="vistazo" href="https://soykvc-collab.github.io/balerco/" target="_blank" rel="noopener">
+          Ver el sitio en pruebas →
+          <span>Está en construcción: las cifras y algunas fotos todavía son provisionales.</span>
+        </a>
       </div>
     </div>
 
-    <div class="semana">
+    <div class="semana semana--viva">
       <div class="bolita">2</div>
       <div>
-        <div class="fecha">Lunes 12 — viernes 16 de octubre</div>
+        <div class="fecha">Martes 13 — viernes 16 de octubre <span class="estado estado--curso">En curso</span></div>
         <h3>Contenido montado y política de datos</h3>
         <ul class="tareas">
           <li>Textos y fotos definitivas dentro del sitio</li>
@@ -128,14 +149,14 @@ h2{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:800;letter-spacing:-.015em;
           <li>Formulario conectado, con la casilla de autorización</li>
           <li>Primera revisión con ustedes</li>
         </ul>
-        <span class="marcaje">Lunes 12 es festivo: la semana tiene cuatro días hábiles</span>
+        <span class="marcaje">El lunes 12 es festivo: la semana arranca el martes</span>
       </div>
     </div>
 
     <div class="semana">
       <div class="bolita">3</div>
       <div>
-        <div class="fecha">Lunes 19 — viernes 23 de octubre</div>
+        <div class="fecha">Lunes 19 — viernes 23 de octubre <span class="estado estado--espera">Pendiente</span></div>
         <h3>Migración, medición y pruebas</h3>
         <ul class="tareas">
           <li>Redirección de las direcciones actuales hacia las secciones nuevas</li>
@@ -150,7 +171,7 @@ h2{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:800;letter-spacing:-.015em;
     <div class="semana semana--meta">
       <div class="bolita">4</div>
       <div>
-        <div class="fecha">Lunes 26 — viernes 30 de octubre</div>
+        <div class="fecha">Lunes 26 — viernes 30 de octubre <span class="estado estado--espera">Pendiente</span></div>
         <h3>Publicación</h3>
         <ul class="tareas">
           <li>Ajustes finales de la segunda revisión</li>
@@ -176,13 +197,15 @@ h2{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:800;letter-spacing:-.015em;
       <li><b>WhatsApp y redes</b>El número que va en el sitio y los enlaces de sus redes</li>
       <li><b>Datos de la empresa</b>Razón social, NIT y dirección, para la política de datos</li>
       <li><b>Responsable de datos</b>Quién atiende las solicitudes sobre datos personales</li>
+      <li style="background:rgba(255,198,30,.14);outline:1px solid rgba(255,198,30,.4)"><b>Acceso al dominio balerco.co</b>Dónde está registrado y quién tiene la clave. Es lo único que puede mover la fecha de publicación, así que es lo más urgente.</li>
     </ul>
   </section>
 
   <p class="nota">
     El sitio actual se mantiene encendido dos semanas más después de la publicación,
-    como respaldo. Si el material llega más tarde de la semana 1, las fechas se corren
-    en la misma proporción y se los aviso de inmediato.
+    como respaldo. Para sostener la fecha del 30 de octubre necesitamos lo que falta
+    durante esta semana; si llega después, las fechas se corren en la misma proporción
+    y se los aviso de inmediato.
   </p>
 
   <p class="firma">
