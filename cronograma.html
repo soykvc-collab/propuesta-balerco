@@ -95,6 +95,42 @@ h2{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:800;letter-spacing:-.015em;
 .firma{margin-top:clamp(30px,5vw,52px);padding-top:22px;border-top:1px solid #e5e8ee;
   font-size:clamp(.78rem,1.05vw,.88rem);color:var(--tinta-suave)}
 
+
+/* ---- entrega de la semana ---- */
+.cambios{display:grid;gap:clamp(12px,1.6vw,18px);margin-top:20px;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr))}
+.cambio{border:1px solid #e7e9ee;border-radius:16px;padding:clamp(16px,2vw,22px);background:var(--blanco)}
+.cambio__n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;
+  background:var(--naranja);color:#fff;font-size:.76rem;font-weight:800;margin-bottom:11px}
+.cambio h3{font-size:clamp(.98rem,1.4vw,1.1rem);font-weight:700;line-height:1.25}
+.cambio p{margin-top:7px;font-size:clamp(.8rem,1.1vw,.9rem);line-height:1.55;color:var(--tinta-suave)}
+.cambio .ver{display:inline-block;margin-top:12px;font-size:.84rem;font-weight:700;
+  color:var(--naranja-hondo);text-decoration:none;border-bottom:2px solid rgba(179,73,10,.25)}
+.cambio .ver:hover{border-bottom-color:currentColor}
+
+/* comparación antes / ahora */
+.comp{display:grid;gap:9px;margin-top:13px}
+.comp__fila{display:flex;align-items:center;gap:10px}
+.comp__et{font-size:.66rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--tinta-suave);width:46px;flex:0 0 auto}
+.pastilla{height:19px;border-radius:6px;flex:1 1 0}
+.secc{display:flex;flex-wrap:wrap;gap:4px}
+.secc span{font-size:.64rem;padding:3px 7px;border-radius:5px;background:var(--gris);color:var(--tinta-suave)}
+.secc span.fuera{background:#FDECEC;color:#9B2C2C;text-decoration:line-through}
+
+/* lo que necesitamos, en tarjetas numeradas */
+.pide{display:grid;gap:11px;margin-top:18px;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,15.5rem),1fr))}
+.pide__item{display:flex;gap:12px;background:rgba(255,255,255,.07);border-radius:14px;padding:14px 16px}
+.pide__n{flex:0 0 auto;width:25px;height:25px;border-radius:50%;background:var(--sol);color:var(--tinta);
+  display:grid;place-items:center;font-size:.75rem;font-weight:800}
+.pide__item b{display:block;color:#fff;font-weight:700;font-size:clamp(.86rem,1.2vw,.95rem)}
+.pide__item span{display:block;margin-top:3px;font-size:clamp(.76rem,1.05vw,.85rem);
+  line-height:1.5;color:rgba(255,255,255,.78)}
+.pide__item .pide__n{display:grid;place-items:center;color:var(--tinta);
+  margin-top:0;font-size:.75rem;line-height:1}
+.pide__nota{margin-top:17px;font-size:clamp(.78rem,1.05vw,.87rem);color:rgba(255,255,255,.72)}
+
 @media (max-width:620px){
   .semana{grid-template-columns:1fr;gap:10px}
   .bolita{width:40px;height:40px;font-size:.9rem}
@@ -117,8 +153,83 @@ h2{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:800;letter-spacing:-.015em;
       Este es el plan de trabajo del sitio web. Lo dejo publicado para que puedan
       consultarlo cuando quieran: lo voy actualizando a medida que avanzamos.
     </p>
-    <div class="sellofecha">Actualizado el lunes 12 de octubre · vamos en fecha</div>
+    <div class="sellofecha">Actualizado el viernes 16 de octubre · semana 2</div>
   </header>
+
+  <section class="seccion" style="margin-top:clamp(26px,4vw,44px)">
+    <h2>Lo que avanzó esta semana</h2>
+    <p class="intro">
+      Cinco cambios, todos salidos de la reunión del martes. Se pueden ver en vivo
+      en el sitio de pruebas.
+    </p>
+
+    <div class="cambios">
+
+      <div class="cambio">
+        <span class="cambio__n">1</span>
+        <h3>La línea gráfica bajó de tono</h3>
+        <p>Salieron los iconos 3D y las cuatro tarjetas pasaron de cuatro colores
+          vivos a un solo tono, con iconos de un trazo.</p>
+        <div class="comp">
+          <div class="comp__fila"><span class="comp__et">Antes</span>
+            <span class="pastilla" style="background:#FFC61E"></span>
+            <span class="pastilla" style="background:#1FA6E0"></span>
+            <span class="pastilla" style="background:#43B54A"></span>
+            <span class="pastilla" style="background:#E94F8A"></span>
+          </div>
+          <div class="comp__fila"><span class="comp__et">Ahora</span>
+            <span class="pastilla" style="background:#F7F8FA;border:1px solid #e7e9ee"></span>
+            <span class="pastilla" style="background:#F7F8FA;border:1px solid #e7e9ee"></span>
+            <span class="pastilla" style="background:#F7F8FA;border:1px solid #e7e9ee"></span>
+            <span class="pastilla" style="background:#F7F8FA;border:1px solid #e7e9ee"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cambio">
+        <span class="cambio__n">2</span>
+        <h3>La portada se acortó</h3>
+        <p>Dos secciones salieron del recorrido principal. Quedan nueve en vez de once,
+          que era lo que la hacía tan larga en celular.</p>
+        <div class="secc" style="margin-top:13px">
+          <span>Portada</span><span>Productos</span><span>Bogotá en colores</span>
+          <span>Misión</span><span>Proyectos</span><span class="fuera">Galería</span>
+          <span>Por qué Balerco</span><span>Cifras</span><span class="fuera">Proceso</span>
+          <span>Sectores</span><span>Contacto</span>
+        </div>
+      </div>
+
+      <div class="cambio">
+        <span class="cambio__n">3</span>
+        <h3>Dos páginas nuevas</h3>
+        <p>Proyectos y Cómo trabajamos ahora viven aparte. Cada una con su propia
+          dirección, que es como Google las puede posicionar por separado.</p>
+        <a class="ver" href="https://soykvc-collab.github.io/balerco/proyectos.html" target="_blank" rel="noopener">Ver Proyectos →</a><br />
+        <a class="ver" href="https://soykvc-collab.github.io/balerco/como-trabajamos.html" target="_blank" rel="noopener">Ver Cómo trabajamos →</a>
+      </div>
+
+      <div class="cambio">
+        <span class="cambio__n">4</span>
+        <h3>El carrusel se arrastra con el dedo</h3>
+        <p>Ya no hay que esperar a que dé la vuelta. Se mueve solo cuando nadie lo toca
+          y se detiene apenas alguien lo agarra. En celular va de lado.</p>
+        <a class="ver" href="https://soykvc-collab.github.io/balerco/proyectos.html" target="_blank" rel="noopener">Probarlo →</a>
+      </div>
+
+      <div class="cambio">
+        <span class="cambio__n">5</span>
+        <h3>Tres ajustes de visualización</h3>
+        <p>El sitio se desplazaba de lado en celular y en portátiles de pantalla
+          mediana. Corregido en los tres puntos donde pasaba.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="seccion">
+    <h2>Las cuatro semanas</h2>
+    <p class="intro">Dónde vamos en el plan completo.</p>
+  </section>
 
   <section>
     <div class="semana">
@@ -144,10 +255,10 @@ h2{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:800;letter-spacing:-.015em;
         <div class="fecha">Martes 13 — viernes 16 de octubre <span class="estado estado--curso">En curso</span></div>
         <h3>Contenido montado y política de datos</h3>
         <ul class="tareas">
-          <li>Textos y fotos definitivas dentro del sitio</li>
-          <li>Página de política de tratamiento de datos personales</li>
-          <li>Formulario conectado, con la casilla de autorización</li>
-          <li>Primera revisión con ustedes</li>
+          <li class="ok"><b>Primera revisión</b> — hecha el martes, con los cambios ya aplicados</li>
+          <li class="ok"><b>Ajustes de la reunión</b> — los cinco de arriba</li>
+          <li class="espera">Política de datos y casilla de autorización — en curso</li>
+          <li class="espera">Textos y fotos definitivas — esperando el material</li>
         </ul>
         <span class="marcaje">El lunes 12 es festivo: la semana arranca el martes</span>
       </div>
@@ -190,14 +301,36 @@ h2{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:800;letter-spacing:-.015em;
       Es lo único que falta para que las cuatro semanas corran sin pausas.
       Entre más pronto llegue, más holgado queda el cronograma.
     </p>
-    <ul class="lista">
-      <li><b>Las cifras reales</b>Proyectos entregados, años de experiencia, ciudades o lo que quieran destacar</li>
-      <li><b>Fotos de obras propias</b>Parques instalados por Balerco, en la mejor calidad que tengan</li>
-      <li><b>Correo de solicitudes</b>Dónde quieren recibir los mensajes del formulario</li>
-      <li><b>WhatsApp y redes</b>El número que va en el sitio y los enlaces de sus redes</li>
-      <li><b>Datos de la empresa</b>Razón social, NIT y dirección, para la política de datos</li>
-      <li><b>Responsable de datos</b>Quién atiende las solicitudes sobre datos personales</li>
-    </ul>
+    <div class="pide">
+      <div class="pide__item"><span class="pide__n">1</span><div>
+        <b>Las cifras reales</b>
+        <span>Proyectos entregados, años y ciudades. Hoy el sitio muestra números de relleno.</span>
+      </div></div>
+      <div class="pide__item"><span class="pide__n">2</span><div>
+        <b>Fotos de obras propias</b>
+        <span>En la mejor calidad que tengan. Entre más grande el archivo, mejor.</span>
+      </div></div>
+      <div class="pide__item"><span class="pide__n">3</span><div>
+        <b>Los cuatro proyectos estrella</b>
+        <span>Tercer Milenio, Parque de los Niños, Funza y La Ballena: fotos y una descripción corta.</span>
+      </div></div>
+      <div class="pide__item"><span class="pide__n">4</span><div>
+        <b>Los códigos de color</b>
+        <span>Para terminar de alinear la página con la nueva línea de marca.</span>
+      </div></div>
+      <div class="pide__item"><span class="pide__n">5</span><div>
+        <b>Correo y WhatsApp</b>
+        <span>Dónde quieren recibir las solicitudes del formulario, y el número que va en el sitio.</span>
+      </div></div>
+      <div class="pide__item"><span class="pide__n">6</span><div>
+        <b>Sus redes sociales</b>
+        <span>Los enlaces reales, o nos dicen cuáles no tienen y los quitamos.</span>
+      </div></div>
+    </div>
+    <p class="pide__nota">
+      Lo de la política de datos lo resolvimos por nuestro lado: recuperamos el texto
+      que preparó su abogada del sitio anterior. Si tienen la versión completa, la usamos.
+    </p>
   </section>
 
   <p class="nota">
