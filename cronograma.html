@@ -131,6 +131,21 @@ h2{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:800;letter-spacing:-.015em;
   margin-top:0;font-size:.75rem;line-height:1}
 .pide__nota{margin-top:17px;font-size:clamp(.78rem,1.05vw,.87rem);color:rgba(255,255,255,.72)}
 
+/* ---- pedidos agrupados por fecha de entrega ---- */
+.lote{margin-top:clamp(20px,2.8vw,30px)}
+.lote__cab{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;
+  padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.15)}
+.lote__fecha{background:var(--sol);color:var(--tinta);border-radius:999px;
+  padding:4px 13px;font-size:clamp(.7rem,1vw,.79rem);font-weight:800;letter-spacing:.03em}
+.lote__que{font-size:clamp(.78rem,1.05vw,.87rem);color:rgba(255,255,255,.78)}
+.lote .pide{margin-top:13px}
+.pide__bloquea{display:block;margin-top:8px;font-size:clamp(.71rem,.98vw,.79rem);
+  font-weight:700;color:var(--sol);letter-spacing:.01em}
+.hecho{margin-top:clamp(20px,2.8vw,28px);background:rgba(67,181,74,.14);
+  border-radius:14px;padding:14px 17px;font-size:clamp(.78rem,1.05vw,.87rem);
+  color:rgba(255,255,255,.85)}
+.hecho b{color:#9BE3A1;font-weight:700}
+
 @media (max-width:620px){
   .semana{grid-template-columns:1fr;gap:10px}
   .bolita{width:40px;height:40px;font-size:.9rem}
@@ -153,56 +168,129 @@ h2{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:800;letter-spacing:-.015em;
       Este es el plan de trabajo del sitio web. Lo dejo publicado para que puedan
       consultarlo cuando quieran: lo voy actualizando a medida que avanzamos.
     </p>
-    <div class="sellofecha">Actualizado el viernes 16 de octubre · semana 2</div>
+    <div class="sellofecha">Actualizado el viernes 6 de noviembre</div>
   </header>
 
   <section class="pedido" style="margin-top:clamp(22px,3.4vw,34px)">
-    <h2>Lo que falta por su lado</h2>
+    <h2>Lo que necesitamos de ustedes, y cuándo</h2>
     <p class="intro">
-      Con la entrega del 4 de noviembre se resolvió casi todo: las fotos de las cinco
-      líneas, los textos del home, los cuatro proyectos y los datos de contacto ya
-      están en el sitio. Queda esto por cerrar.
+      Para publicar el viernes 20 de noviembre. No es una lista suelta: cada cosa
+      tiene una fecha porque desbloquea un trabajo que viene después. Lo que llegue
+      tarde corre la publicación, no el trabajo.
     </p>
-    <div class="pide">
-      <div class="pide__item"><span class="pide__n">1</span><div>
-        <b>El teléfono: ¿uno o dos?</b>
-        <span>El comparativo muestra el 305 746 0152 en la sección de contacto y el
-          313 333 0373 en el pie. Dejamos el 313 333 0373, que es el del documento de
-          notas. Si son dos líneas distintas nos dicen cuál va en cada lugar.</span>
-      </div></div>
-      <div class="pide__item"><span class="pide__n">2</span><div>
-        <b>El correo de contacto</b>
-        <span>Quedó <i>balercosas@gmail.com</i> en todo el sitio. Vale la pena revisarlo:
-          ya tienen dominio propio y se puede aprovechar para el correo, del estilo
-          <i>contactenos@balerco.com.co</i>. En la política de datos dejamos el del
-          dominio hasta que nos confirmen cuál prefieren.</span>
-      </div></div>
-      <div class="pide__item"><span class="pide__n">3</span><div>
-        <b>Facebook y LinkedIn</b>
-        <span>De Instagram tenemos el usuario. De los otros dos nos llegó el nombre
-          de la página pero no el enlace, y sin enlace no los podemos poner.</span>
-      </div></div>
-      <div class="pide__item"><span class="pide__n">4</span><div>
-        <b>El documento «Textos Home»</b>
-        <span>En la carpeta 1.0 Home solo quedó el archivo temporal que Word deja
-          abierto; el documento como tal no alcanzó a subir. Lo armamos con lo que
-          traía el comparativo, pero si tenían textos aparte, mándenlos.</span>
-      </div></div>
-      <div class="pide__item"><span class="pide__n">5</span><div>
-        <b>El logo en vectorial</b>
-        <span>Un .svg o el archivo de Illustrator. Hoy el logo es una imagen y se
-          nota en pantallas grandes.</span>
-      </div></div>
-      <div class="pide__item"><span class="pide__n">6</span><div>
-        <b>Los códigos de color</b>
-        <span>Para terminar de alinear la página con la nueva línea de marca.</span>
-      </div></div>
+
+    <!-- ---------- lote 1 ---------- -->
+    <div class="lote">
+      <div class="lote__cab">
+        <span class="lote__fecha">Martes 10 de noviembre</span>
+        <span class="lote__que">Sin esto no podemos empezar la mudanza del dominio</span>
+      </div>
+      <div class="pide">
+        <div class="pide__item"><span class="pide__n">1</span><div>
+          <b>Acceso al panel del dominio</b>
+          <span>Es lo único que no podemos resolver por nuestro lado. El sitio nuevo
+            tiene que quedar en <i>balerco.co</i>, y eso se hace desde el panel donde
+            está registrado el dominio (hoy en GoDaddy). Con un acceso de invitado
+            basta; no necesitamos la contraseña de la cuenta.</span>
+          <span class="pide__bloquea">Bloquea: la mudanza y, con ella, todo el posicionamiento</span>
+        </div></div>
+        <div class="pide__item"><span class="pide__n">2</span><div>
+          <b>Cuál es el teléfono bueno</b>
+          <span>Seguimos con dos: el 313 333 0373 en el pie y el 305 746 0152 en el
+            comparativo. Google compara el número del sitio con el de la ficha de
+            negocio y premia que coincidan, así que tiene que ser uno solo.</span>
+          <span class="pide__bloquea">Bloquea: la ficha de Google</span>
+        </div></div>
+        <div class="pide__item"><span class="pide__n">3</span><div>
+          <b>A qué correo deben llegar los formularios</b>
+          <span>El formulario está armado pero todavía no conectado: hoy, si alguien
+            escribe, no llega a ninguna parte. Necesitamos la dirección donde quieren
+            recibir las solicitudes.</span>
+          <span class="pide__bloquea">Bloquea: el formulario de contacto</span>
+        </div></div>
+      </div>
     </div>
+
+    <!-- ---------- lote 2 ---------- -->
+    <div class="lote">
+      <div class="lote__cab">
+        <span class="lote__fecha">Jueves 12 de noviembre</span>
+        <span class="lote__que">Material que hay que montar y revisar antes de salir</span>
+      </div>
+      <div class="pide">
+        <div class="pide__item"><span class="pide__n">4</span><div>
+          <b>El logo en vectorial</b>
+          <span>Un .svg o el archivo de Illustrator. En el pie ahora va más grande y
+            se le alcanza a notar el pixelado en pantallas de alta resolución.</span>
+        </div></div>
+        <div class="pide__item"><span class="pide__n">5</span><div>
+          <b>Los logos de Proludic, Breeze y Ropecamp</b>
+          <span>La página de fabricantes aliados ya está hecha con fotos de los
+            trabajos de cada uno, pero con los logos se lee como una representación
+            formal. De paso: ¿Breeze Creative sigue vigente en el portafolio?</span>
+        </div></div>
+        <div class="pide__item"><span class="pide__n">6</span><div>
+          <b>La imagen del hero, en su tamaño original</b>
+          <span>La que mandaron en el comparativo. Va a reemplazar el video de la
+            portada con el acercamiento que pidieron en la reunión.</span>
+        </div></div>
+        <div class="pide__item"><span class="pide__n">7</span><div>
+          <b>El documento «Textos Home»</b>
+          <span>En la carpeta 1.0 Home solo quedó el archivo temporal que Word deja
+            abierto. Lo armamos con lo que traía el comparativo, pero si tenían
+            textos aparte, mándenlos.</span>
+        </div></div>
+        <div class="pide__item"><span class="pide__n">8</span><div>
+          <b>Los códigos de color</b>
+          <span>De la nueva línea de marca, para terminar de alinear la página.</span>
+        </div></div>
+        <div class="pide__item"><span class="pide__n">9</span><div>
+          <b>Confirmar las cifras</b>
+          <span>200+ proyectos, 12+ años y 25+ ciudades, como venían en el
+            comparativo. No coinciden con las del sitio que tienen publicado hoy, y
+            conviene cerrar cuál es la buena antes de salir.</span>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- ---------- lote 3 ---------- -->
+    <div class="lote">
+      <div class="lote__cab">
+        <span class="lote__fecha">Martes 17 de noviembre</span>
+        <span class="lote__que">Lo último, para dejar cerrado el día de la publicación</span>
+      </div>
+      <div class="pide">
+        <div class="pide__item"><span class="pide__n">10</span><div>
+          <b>Abrir la ficha de Google del negocio</b>
+          <span>Hoy no existe: al buscar «Balerco» no sale la tarjeta lateral con
+            dirección, teléfono y fotos. Es lo que más mueve la aguja en búsquedas
+            locales. Que la abran con <i>balercosas@gmail.com</i> y nos agreguen como
+            administradores — así no tienen que darnos su contraseña. Y necesitamos
+            saber si reciben visitas en la Calle 71b o si siempre van a sitio.</span>
+          <span class="pide__bloquea">Bloquea: aparecer en el mapa y en «parques infantiles Bogotá»</span>
+        </div></div>
+        <div class="pide__item"><span class="pide__n">11</span><div>
+          <b>Decidir el correo del dominio</b>
+          <span><i>balerco.co</i> todavía no tiene correo configurado. La política de
+            datos nombra <i>contactenos@balerco.com.co</i> como canal de atención, y
+            ese dominio no existe: ese correo no recibe nada. Es el canal que exige
+            la Ley 1581, así que hay que dejarlo funcionando.</span>
+          <span class="pide__bloquea">Bloquea: el cierre legal de la política de datos</span>
+        </div></div>
+      </div>
+    </div>
+
+    <p class="hecho">
+      <b>Ya resuelto de la entrega del 4 de noviembre:</b> las fotos de las cinco
+      líneas, los cuatro proyectos, los enlaces de Instagram, Facebook y LinkedIn,
+      la estructura del pie y los datos de contacto. Todo eso ya está montado.
+    </p>
+
     <p class="pide__nota">
-      Las cifras quedaron como en su comparativo: 200+ proyectos, 12+ años,
-      25+ ciudades y los momentos de esparcimiento. Ojo que no coinciden con las
-      del sitio que tienen publicado hoy, así que conviene confirmar cuál es la
-      versión buena antes de salir.
+      Si algo de esto se demora, no pasa nada grave: nos avisan y corremos la fecha
+      de publicación juntos. Lo que no conviene es llegar al 20 sin el acceso al
+      dominio, porque hasta que el sitio no viva en balerco.co, nada de lo que
+      mejoremos cuenta para Google.
     </p>
   </section>
 
